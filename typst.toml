@@ -1,0 +1,5 @@
+[package]
+name = "unipd-doc"
+version = "0.0.1"
+entrypoint = "unipd-doc.typ"
+authors = ["Alberto Lazari"]
