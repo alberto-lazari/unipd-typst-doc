@@ -4,23 +4,23 @@
   [\# Lecture #number]
 }
 
+#let notes() = doc => {
+  set text(font: "Arial")
+  doc
+}
+
 #let unipd-doc(title: none, subtitle: none, author: none, date: none) = doc => {
-  set page(numbering: "1")
-  set list(marker: ([•], [◦], [--]))
   let unipd-red = rgb(180, 27, 33)
 
+  set page(numbering: "1")
+  set list(marker: ([•], [◦], [--]))
   set heading(numbering: "1.1.")
   show heading.where(level: 1): it => {
     set text(fill: unipd-red)
     it
   }
 
-  show outline.entry.where(level: 1): it => {
-    v(1em, weak: true)
-    strong(it)
-  }
-
-  let make_title(title: none, subtitle: none, author: none, date: none) = align(center, {
+  align(center, {
     v(10em)
     figure(image("images/unipd-logo.png", width: 50%))
     v(3em)
@@ -38,12 +38,10 @@
     pagebreak()
   })
 
-  make_title(
-    title:    title,
-    subtitle: subtitle,
-    author:   author,
-    date:     date,
-  )
+  show outline.entry.where(level: 1): it => {
+    v(1em, weak: true)
+    strong(it)
+  }
 
   outline(
     title: "Index",
