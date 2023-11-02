@@ -1,10 +1,10 @@
 #import "@local/unipd-doc:0.0.1": *
 
 #show: unipd-doc(
-  title: [Title],
+  title:    [Title],
   subtitle: [Subtitle],
-  author: [The author],
-  date: [DD-MM-YY],
+  author:   [The author],
+  date:     [DD-MM-YY],
 )
 
 = Heading
