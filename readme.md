@@ -6,10 +6,9 @@ data_dir="$(
     if [[ $(uname) = Linux ]]; then
         echo "${XDG_DATA_HOME:-$HOME/.local/share}"
     elif [[ $(uname) = Darwin ]]; then
-        echo $HOME/Library/Application\ Support
+        echo "$HOME/Library/Application Support"
     fi
-)" \
-git clone --depth=1 https://github.com/albertolazari/unipd-typst-doc \
+)" git clone --depth=1 https://github.com/albertolazari/unipd-typst-doc \
     "$data_dir/typst/packages/local/unipd-doc/0.0.1"
 ```
 
